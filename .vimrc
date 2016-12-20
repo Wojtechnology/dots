@@ -17,12 +17,19 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+Plugin 'lervag/vimtex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 call vundle#end()
 filetype plugin indent on
 
 " Fugitive to status bar
 set statusline=%f\ %{fugitive#statusline()}
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" ignore node modules, venv
+let g:ctrlp_custom_ignore = 'node_modules\|venv'
 
 " Turn on syntax highlighting
 syntax on
@@ -48,10 +55,11 @@ set encoding=utf-8
 " Whitespace
 set wrap
 set formatoptions=tcqrn1
-set tabstop=2
+set tabstop=8
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=0
 set expandtab
+set smarttab
 set noshiftround
 
 " Line numbering
@@ -88,6 +96,7 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
+set cc=100
 map <leader><space> :let @/=''<cr> " clear search
 
 " Remap help key.
@@ -110,7 +119,8 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Color scheme (terminal)
-set t_Co=256
-set background=dark
-colorscheme hilal
+" set background=dark
+colorscheme dracula
+" colorscheme solarized
 
+set cursorline
