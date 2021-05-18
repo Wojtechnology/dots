@@ -12,6 +12,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'ervandew/supertab'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
