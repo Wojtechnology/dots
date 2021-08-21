@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ajmwagar/vim-deus'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
@@ -140,4 +141,14 @@ autocmd BufWritePost * GitGutter
 
 " Powerline
 set rtp+=~/.powerline/powerline/bindings/vim/
-set laststatus=2
+
+" Disable Jedi-vim autocompletion and enable call-signatures options
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = "1"
+" let g:jedi#popup_select_first = 1
+" let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#goto_command = "<C-d>"
+
+let g:SuperTabDefaultCompletionType = "context"
