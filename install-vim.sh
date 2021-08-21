@@ -8,7 +8,7 @@ POWERLINE_PATH=~/.powerline
 [ -d "$VUNDLE_PATH" ] || git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLE_PATH
 
 # Install powerline
-[ -d "$POWERLINE_PATH" ] || git clone git://github.com/powerline/powerline $POWERLINE_PATH
+[ -d "$POWERLINE_PATH" ] || git clone https://github.com/powerline/powerline.git $POWERLINE_PATH
 
 # Copy vimrc
 cp .vimrc ~/.vimrc
