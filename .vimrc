@@ -139,5 +139,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePost * GitGutter
 
 " Powerline
-set rtp+=/home/wojtek/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+set rtp+=~/.powerline/powerline/bindings/vim/
 set laststatus=2

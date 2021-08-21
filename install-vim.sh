@@ -2,14 +2,13 @@
 
 VUNDLE_PATH=~/.vim/bundle/Vundle.vim
 COLORS_PATH=~/.vim/colors
-FZF_PATH=~/.fzf
+POWERLINE_PATH=~/.powerline
 
 # Install vundle
-if [ -d "$VUNDLE_PATH" ]; then
-    echo 'Vundle already installed'
-else
-    git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLE_PATH
-fi
+[ -d "$VUNDLE_PATH" ] || git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLE_PATH
+
+# Install powerline
+[ -d "$POWERLINE_PATH" ] || git clone git://github.com/powerline/powerline $POWERLINE_PATH
 
 # Copy vimrc
 cp .vimrc ~/.vimrc
