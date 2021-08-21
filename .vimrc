@@ -17,8 +17,6 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'powerline/powerline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -139,3 +137,7 @@ silent! colorscheme ayu
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePost * GitGutter
+
+" Powerline
+set rtp+=/home/wojtek/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+set laststatus=2
