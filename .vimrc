@@ -7,12 +7,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ajmwagar/vim-deus'
+Plugin 'ayu-theme/ayu-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'fatih/vim-go'
+Plugin 'powerline/powerline'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -26,7 +30,7 @@ nnoremap <C-j> :ALEGoToDefinition<CR>
 
 " Remap ctrl-p to start FZF
 let g:fzf_command_prefix = 'Fzf'
-nnoremap <C-p> :FzfGFiles<CR>
+nnoremap <C-p> :FzfFiles<CR>
 nnoremap <C-g> :FzfRg<CR>
 
 " Turn on syntax highlighting
@@ -51,12 +55,12 @@ set ruler
 set encoding=utf-8
 
 " Whitespace
-set wrap
+set nowrap
 set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set formatoptions=qrn1
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set noshiftround
 
@@ -111,8 +115,26 @@ set listchars=tab:▸\ ,eol:¬
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme deus
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" set t_Co=256
+
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" set t_Co=256
+" set background=dark
+" colorscheme deus
+
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+silent! colorscheme ayu
+
+" Remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePost * GitGutter
+
+" Powerline
+set rtp+=/home/wojtek/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+set laststatus=2
