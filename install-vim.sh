@@ -2,7 +2,6 @@
 
 VUNDLE_PATH=~/.vim/bundle/Vundle.vim
 COLORS_PATH=~/.vim/colors
-FZF_PATH=~/.fzf
 
 # Install vundle
 if [ -d "$VUNDLE_PATH" ]; then
