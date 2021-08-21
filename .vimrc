@@ -17,8 +17,6 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'powerline/powerline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
